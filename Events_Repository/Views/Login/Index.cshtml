@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div >
+
+<script src="@Url.Content("js/angular/base/login/index/controller.js")"></script>
+    <div ng-controller="LoginController">
+        <div ng-if="loginMode">
+            <form id="signIn">
+                <label for="signInLogin">Login</label>
+                <input id="signInLogin"ng-model="signInForm.login" required/>
+                <label for="signInPassword">Password</label>
+                <input id="signInPassword"ng-model="signInForm.passwort" type="password" required/>
+            </form>
+            <a href="#" ng-click="changeMode()">Common sign up!!</a>
+        </div>
+        <div ng-if="!loginMode">
+            <form id="signUp">
+                <label for="signUpLogin">Login</label>
+                <input id="signUpLogin" ng-model="signUpForm.login" required />
+                <label for="signUpEmail">Login</label>
+                <input id="signUpEmail" ng-model="signUpForm.email" required />
+                <label for="signUpPassword">Password</label>
+                <input id="signUpPassword" ng-model="signUpForm.passwort" type="password" required />
+            </form>
+            <a href="#" ng-click="changeMode()">No. I already have an account</a>
+        </div>
+    </div>
+</div>

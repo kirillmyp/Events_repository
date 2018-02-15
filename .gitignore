@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/obj
+/.vs/Events_Repository/v15
+/Events_Repository/obj
+*.user
+/Events_Repository/bin/Debug/netcoreapp2.0
+/Events_Repository/wwwroot/lib/lib.rar
