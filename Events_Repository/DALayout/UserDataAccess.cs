@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Threading.Tasks;
-using Events_Repository.Models;
-
-namespace Events_Repository.Data_Access_Layout
+﻿namespace Events_Repository.DALayout
 {
-    public class DataAccessLogin
+
+    using System;
+    using System.Data.SqlClient;
+    using Models.Interface;
+
+    public class UserDataAccess : IUserDataAccess
     {
         public bool CheckUserToken(int? id)
         {
@@ -28,7 +26,7 @@ namespace Events_Repository.Data_Access_Layout
         /// </summary>
         /// <param name="newUser"></param>
         /// <returns></returns>
-        public bool SignUpUser(User newUser)
+        public bool SignUpUser(IUser newUser)
         {
             return false;
         }
@@ -38,7 +36,7 @@ namespace Events_Repository.Data_Access_Layout
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        public bool SignInUser(User user)
+        public bool SignInUser(IUser user)
         {
             if (true)//check password and login
             {

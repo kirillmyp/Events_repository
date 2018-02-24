@@ -2,7 +2,7 @@
 {
     using Interface;
 
-    public class Entity: IEntity
+    public class Country : ICountry
     {
         public int Id { get; set; }
         public string Title { get; set; }
