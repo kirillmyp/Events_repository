@@ -1,0 +1,202 @@
+﻿
+@{
+    ViewData["Title"] = "Административная часть";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="organizations">
+    <table>
+        <colgroup>
+            <col style="width: 30%;" />
+            <col style="width: 5%;" />
+            <col style="width: 15%;" />
+            <col style="width: 25%;" />
+            <col style="width: 25%;" />
+        </colgroup>
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Checked</th>
+            <th>Checked by</th>
+            <th>City</th>
+            <th>Country</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><input ng-model="filter.title" placeholder="title"/></td>
+            <td><select ng-model="filter.checked"><option>Yes</option><option>No</option></select></td>
+            <td><input ng-model="filter.checked_by" placeholder="by whom"/></td>
+            <td><input ng-model="filter.city" placeholder="city"/></td>
+            <td><input ng-model="filter.country" placeholder="Country"/></td>
+        </tr>
+        <tr data-id="item.id" ng-repeat="item in organizations">
+            <td>{{item.title}}</td>
+            <td>{{item.checked}}</td>
+            <td>{{item.checked_by}}</td>
+            <td>{{item.city}}</td>
+            <td>{{item.Country}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="roles">
+    <table>
+        <colgroup>
+            <col style="width: 15%;" />
+            <col style="width: 25%;" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input ng-model="filter.id" placeholder="id" /></td>
+                <td><input ng-model="filter.title" placeholder="title" /></td>
+            </tr>
+            <tr data-id="item.id" ng-repeat="item in roles">
+                <td>{{item.id}}</td>
+                <td>{{item.title}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="countries">
+    <table>
+        <colgroup>
+            <col style="width: 15%;" />
+            <col style="width: 25%;" />
+        </colgroup>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><input ng-model="filter.id" placeholder="id" /></td>
+            <td><input ng-model="filter.title" placeholder="title" /></td>
+        </tr>
+        <tr data-id="item.id" ng-repeat="item in countries">
+            <td>{{item.id}}</td>
+            <td>{{item.title}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="cities">
+    <table>
+        <colgroup>
+            <col style="width: 15%;" />
+            <col style="width: 25%;" />
+            <col style="width: 25%;" />
+        </colgroup>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Country</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><input ng-model="filter.id" placeholder="id" /></td>
+            <td><input ng-model="filter.title" placeholder="title" /></td>
+            <td><input ng-model="filter.country" placeholder="country" /></td>
+        </tr>
+        <tr data-id="item.id" ng-repeat="item in cities">
+            <td>{{item.id}}</td>
+            <td>{{item.title}}</td>
+            <td>{{item.country}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="tags">
+    <table>
+        <colgroup>
+            <col style="width: 15%;" />
+            <col style="width: 25%;" />
+        </colgroup>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input ng-model="filter.id" placeholder="id" /></td>
+                <td><input ng-model="filter.title" placeholder="title" /></td>
+            </tr>
+            <tr data-id="item.id" ng-repeat="item in tags">
+                <td>{{item.id}}</td>
+                <td>{{item.title}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="tickets">
+    <table>
+        <colgroup>
+            <col style="width: 15%;" />
+            <col style="width: 25%;" />
+            <col style="width: 25%;" />
+        </colgroup>
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Amount Tickets</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><input ng-model="filter.orgTitle" placeholder="orgTitle" /></td>
+            <td><input ng-model="filter.amountTickets" placeholder="amountTickets" /></td>
+        </tr>
+        <tr data-id="item.id" ng-repeat="item in tickets">
+            <td>{{item.orgTitle}}</td>
+            <td>{{item.amountTickets}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="users">
+    <table>
+        <colgroup>
+            <col style="width: 25%;" />
+            <col style="width: 15%;" />
+            <col style="width: 35%;" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Login</th>
+                <th>Role</th>
+                <th>Full name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input ng-model="filter.title" placeholder="title" /></td>
+                <td><input ng-model="filter.role" placeholder="role" /></td>
+                <td><input ng-model="filter.fullName" placeholder="fullName" /></td>
+            </tr>
+            <tr data-id="item.id" ng-repeat="item in users">
+                <td>{{item.title}}</td>
+                <td>{{item.role}}</td>
+                <td>{{item.fullName}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

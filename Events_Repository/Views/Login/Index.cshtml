@@ -6,24 +6,35 @@
 <div >
 
 <script src="@Url.Content("js/angular/base/login/index/controller.js")"></script>
-    <div ng-controller="LoginController">
+    <div ng-controller="LoginIndexController">
         <div ng-if="loginMode">
-            <form id="signIn">
+            <form id="signIn" action="/Login/SignIn">
                 <label for="signInLogin">Login</label>
-                <input id="signInLogin"ng-model="signInForm.login" required/>
+                <input id="signInLogin" ng-model="signInForm.login" required />
                 <label for="signInPassword">Password</label>
-                <input id="signInPassword"ng-model="signInForm.passwort" type="password" required/>
+                <input id="signInPassword" ng-model="signInForm.passwort" type="password" required />
+                <label class="err_signIn" style="display: none;">Not all filed is fulled up</label>
+                <button ng-click="signIn()"></button>
             </form>
             <a href="#" ng-click="changeMode()">Common sign up!!</a>
         </div>
         <div ng-if="!loginMode">
-            <form id="signUp">
-                <label for="signUpLogin">Login</label>
-                <input id="signUpLogin" ng-model="signUpForm.login" required />
-                <label for="signUpEmail">Login</label>
-                <input id="signUpEmail" ng-model="signUpForm.email" required />
-                <label for="signUpPassword">Password</label>
-                <input id="signUpPassword" ng-model="signUpForm.passwort" type="password" required />
+            <form id="signUp" action="/Login/SignUp">
+                <div>
+                    <label for="signUpEmail">Login</label>
+                    <input id="signUpEmail" ng-model="signUpForm.email" required/>
+                    <label class="err_signUpEmail" style="display: none;">Full up email, please</label>
+                </div>
+                <div>
+                    <label for="signUpLogin">Login</label>
+                    <input id="signUpLogin" ng-model="signUpForm.login" required />
+                    <label class="err_signUpLogin" style="display: none;">Full up login</label>
+                    <label for="signUpPassword">Password</label>
+                    <input id="signUpPassword" ng-model="signUpForm.passwort" type="password" required />
+                    <label class="err_signUpPassword" style="display: none;">Full up password</label>
+                    <button ng-click="signUp()"></button>
+                </div>
+                <label class="err_signUp" style="display: none;">Not all filed is fulled up</label>
             </form>
             <a href="#" ng-click="changeMode()">No. I already have an account</a>
         </div>
